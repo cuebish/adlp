@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Calendar, Mail, MapPin, Phone, Menu, X, Linkedin } from 'lucide-react';
 import { useLanguage } from './hooks/useLanguage';
 import { translations } from './i18n/translations';
 import { LanguageSwitch } from './components/LanguageSwitch';
-import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,64 +12,27 @@ function App() {
   const memories = [
     {
       image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/events1.png",
-      title: "Supporting Make-A-Wish Foundation",
-      alt: "Children from Make-A-Wish Foundation enjoying a day at the golf course"
+      title: "Golf Classic 2023"
     },
     {
       image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/events2.png",
-      title: "Community Outreach Program",
-      alt: "Local community members participating in golf activities"
+      title: "Community Golf Day"
     },
     {
       image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/events3.png",
-      title: "Youth Development Initiative",
-      alt: "Young golfers learning the fundamentals of golf"
+      title: "Youth Golf Program"
     },
     {
       image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/events4.png",
-      title: "10-8 InService Fundraiser",
-      alt: "Charity tournament participants supporting law enforcement families"
+      title: "Charity Tournament"
     },
     {
       image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/events5.png",
-      title: "Junior Golf Academy",
-      alt: "Children participating in summer golf training program"
+      title: "Summer Golf Camp"
     },
     {
       image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/events6.png",
-      title: "Community Impact Event",
-      alt: "Community gathering celebrating successful fundraising efforts"
-    },
-    // Additional images for the gallery
-    {
-      image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa",
-      title: "Golf Course Scenery",
-      alt: "Beautiful golf course landscape at sunset"
-    },
-    {
-      image: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b",
-      title: "Professional Training",
-      alt: "Professional golfer teaching young students"
-    },
-    {
-      image: "https://images.unsplash.com/photo-1535132011086-b8818f016104",
-      title: "Youth Development",
-      alt: "Young golfers practicing their swing"
-    },
-    {
-      image: "https://images.unsplash.com/photo-1592919505780-303950717480",
-      title: "Community Event",
-      alt: "Community members gathered for a golf tournament"
-    },
-    {
-      image: "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa",
-      title: "Charity Tournament",
-      alt: "Participants at a charity golf tournament"
-    },
-    {
-      image: "https://images.unsplash.com/photo-1535463731090-e34f4b5098c5",
-      title: "Golf Education",
-      alt: "Educational session for aspiring golfers"
+      title: "Community Gathering"
     }
   ];
 
@@ -114,53 +73,8 @@ function App() {
     }
   ];
 
-  // Slider settings
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        }
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  };
-
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>{currentLang === 'en' ? 'Amigos de la Placita - Making a Difference Through Golf' : 'Amigos de la Placita - Haciendo la Diferencia a Través del Golf'}</title>
-        <meta name="description" content={currentLang === 'en' ? 
-          'Amigos de la Placita organizes charitable golf events in Puerto Rico, supporting organizations like Make-A-Wish Foundation and 10-8 InService.' : 
-          'Amigos de la Placita organiza eventos benéficos de golf en Puerto Rico, apoyando organizaciones como Make-A-Wish Foundation y 10-8 InService.'} 
-        />
-        <meta name="keywords" content="golf charity, Puerto Rico golf, Make-A-Wish Foundation, 10-8 InService, charitable events, golf tournament" />
-        <meta property="og:title" content="Amigos de la Placita" />
-        <meta property="og:description" content={currentLang === 'en' ? 
-          'Join us in making a difference through golf in Puerto Rico.' : 
-          'Únete a nosotros para hacer la diferencia a través del golf en Puerto Rico.'} 
-        />
-        <meta property="og:image" content="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/ADLP_Logo_Small.JPG" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <link rel="alternate" hrefLang="en" href="https://amigosdelaplacita.org/en" />
-        <link rel="alternate" hrefLang="es" href="https://amigosdelaplacita.org/es" />
-      </Helmet>
-
       {/* Navbar */}
       <nav className="bg-gray-100 text-gray-800 fixed w-full z-10">
         <div className="container mx-auto px-4">
@@ -176,7 +90,6 @@ function App() {
               <a href={`/${currentLang}#about`} className="hover:text-green-600 font-medium">{t.nav.about}</a>
               <a href={`/${currentLang}#events`} className="hover:text-green-600 font-medium">{t.nav.events}</a>
               <a href={`/${currentLang}#team`} className="hover:text-green-600 font-medium">{t.nav.team}</a>
-              <a href={`/${currentLang}#contact`} className="hover:text-green-600 font-medium">{t.nav.contact}</a>
               <LanguageSwitch />
             </div>
 
@@ -227,13 +140,6 @@ function App() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {t.nav.team}
-                </a>
-                <a 
-                  href={`/${currentLang}#contact`}
-                  className="block px-3 py-2 rounded-md text-base font-medium hover:bg-green-50 hover:text-green-600"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {t.nav.contact}
                 </a>
               </div>
             </div>
@@ -376,25 +282,23 @@ function App() {
         </div>
       </section>
 
-      {/* Gallery Section (formerly Memories) */}
-      <section className="py-16 md:py-24 bg-white">
+      {/* Memories */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 tracking-tight">Gallery</h2>
-          <div className="max-w-6xl mx-auto">
-            <Slider {...sliderSettings}>
-              {memories.map((memory, index) => (
-                <div key={index} className="px-2">
-                  <div className="aspect-square overflow-hidden rounded-lg">
-                    <img 
-                      src={memory.image} 
-                      alt={memory.alt}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
-                  <p className="mt-2 text-center text-sm text-gray-600">{memory.title}</p>
-                </div>
-              ))}
-            </Slider>
+          <h2 className="text-3xl font-bold text-center mb-12 tracking-tight">{t.memories.title}</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-6xl mx-auto">
+            {memories.map((memory, index) => (
+              <div 
+                key={index} 
+                className="aspect-square overflow-hidden relative"
+              >
+                <img 
+                  src={memory.image} 
+                  alt={memory.title}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
