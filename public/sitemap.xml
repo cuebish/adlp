@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://amigosdelaplacita.org/en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amigosdelaplacita.org/es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amigosdelaplacita.org/en"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://amigosdelaplacita.org/es</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amigosdelaplacita.org/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amigosdelaplacita.org/es"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://amigosdelaplacita.org/en/register</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amigosdelaplacita.org/es/register"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amigosdelaplacita.org/en/register"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amigosdelaplacita.org/es/register</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amigosdelaplacita.org/en/register"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amigosdelaplacita.org/es/register"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
