@@ -238,11 +238,11 @@ function App() {
               </p>
               <div className="grid grid-cols-2 gap-6 pt-4">
                 <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <div className="text-3xl font-bold text-green-600 mb-2">8+</div>
+                  <div className="text-3xl font-bold text-green-600 mb-2">10+</div>
                   <div className="text-gray-600">Years of Service</div>
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <div className="text-3xl font-bold text-green-600 mb-2">$500K+</div>
+                  <div className="text-3xl font-bold text-green-600 mb-2">$100K+</div>
                   <div className="text-gray-600">Funds Raised</div>
                 </div>
               </div>
