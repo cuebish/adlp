@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Mail, MapPin, Phone, Menu, X } from 'lucide-react';
+import { Calendar, Mail, MapPin, Phone, Menu, X, Linkedin } from 'lucide-react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,17 +35,23 @@ function App() {
     {
       name: "Erickson Figueras",
       role: "President",
-      image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/erickson1.png?auto=format&fit=crop&q=80&w=400"
+      image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/erickson1.png?auto=format&fit=crop&q=80&w=400",
+      email: "erickson@amigosdelaplacita.org",
+      linkedin: "https://www.linkedin.com/in/erickson-figueras-8b917ab/"
     },
     {
       name: "Humberto Cuebas",
       role: "Treasurer",
-      image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/sr1.png?auto=format&fit=crop&q=80&w=400"
+      image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/sr1.png?auto=format&fit=crop&q=80&w=400",
+      email: "humberto@amigosdelaplacita.org",
+      linkedin: "https://www.linkedin.com/in/humberto-cuebas-18b710bb/"
     },
     {
       name: "Humberto Javier Cuebas",
       role: "Consultant",
-      image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/jr1.png?auto=format&fit=crop&q=80&w=400"
+      image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/jr1.png?auto=format&fit=crop&q=80&w=400",
+      email: "humbertojr@amigosdelaplacita.org",
+      linkedin: "https://www.linkedin.com/in/humberto-cuebas-jr/"
     }
   ];
 
@@ -275,9 +281,7 @@ function App() {
                   </div>
                 </div>
                 <a 
-                  href="https://www.cognitoforms.com/AMIGOSDELAPLACITAGOLFCLASSICINC/_2025PlacitaOpenInscriptionForm"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/register"
                   className="inline-block bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors mt-4"
                 >
                   Register Now
@@ -331,6 +335,24 @@ function App() {
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-2 tracking-tight">{member.name}</h3>
+                <div className="flex items-center justify-center space-x-4 mt-4">
+                  <a 
+                    href={`mailto:${member.email}`}
+                    className="text-gray-600 hover:text-green-600 transition-colors"
+                    title={member.email}
+                  >
+                    <Mail className="h-5 w-5" />
+                  </a>
+                  <a 
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-green-600 transition-colors"
+                    title="LinkedIn Profile"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                </div>
               </div>
             ))}
           </div>
