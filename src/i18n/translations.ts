@@ -39,8 +39,8 @@ export const translations = {
       },
       register: "Register Now"
     },
-    memories: {
-      title: "Memories"
+    gallery: {
+      title: "Gallery"
     },
     team: {
       title: "Our Team"
@@ -98,8 +98,8 @@ export const translations = {
       },
       register: "Registrarse Ahora"
     },
-    memories: {
-      title: "Memorias"
+    gallery: {
+      title: "Galería"
     },
     team: {
       title: "Nuestro Equipo"

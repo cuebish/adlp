@@ -81,7 +81,7 @@ function App() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <a href={`/${currentLang}`} className="flex-shrink-0">
-              <img src="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/ADLP_Logo_Small.JPG" alt="Amigos de la Placita" className="h-12 w-auto" />
+              <img src="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/ADLP_Logo.jpg" alt="Amigos de la Placita" className="h-12 w-auto" />
             </a>
 
             {/* Desktop Navigation */}
@@ -281,10 +281,10 @@ function App() {
         </div>
       </section>
 
-      {/* Memories */}
+      {/* Gallery */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 tracking-tight">{t.memories.title}</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 tracking-tight">{t.gallery.title}</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-6xl mx-auto">
             {memories.map((memory, index) => (
               <div 
