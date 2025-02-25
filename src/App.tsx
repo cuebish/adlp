@@ -151,11 +151,19 @@ function App() {
       <section id="home" className="pt-16 md:pt-24">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center">
-            <div className="w-full md:w-1/2 md:pr-12 mb-8 md:mb-0">
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tight mb-6">
+            {/* Image moved above text for mobile, order changes on desktop */}
+            <div className="w-full md:w-1/2 md:order-2">
+              <img 
+                src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&q=80&w=2000"
+                alt="Golf Course"
+                className="w-full h-[250px] md:h-[600px] object-cover rounded-lg"
+              />
+            </div>
+            <div className="w-full md:w-1/2 mt-6 md:mt-0 md:pr-12 md:order-1">
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tight mb-4 md:mb-6">
                 {t.hero.title}
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              <p className="text-xl text-gray-600 leading-relaxed mb-6 md:mb-8">
                 {t.hero.subtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -173,13 +181,6 @@ function App() {
                 </a>
               </div>
             </div>
-            <div className="w-full md:w-1/2">
-              <img 
-                src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&q=80&w=2000"
-                alt="Golf Course"
-                className="w-full h-[300px] md:h-[600px] object-cover rounded-lg"
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -188,23 +189,21 @@ function App() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8 tracking-tight">{t.foundations.title}</h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-8 justify-center items-center max-w-4xl mx-auto">
             {foundations.map((foundation) => (
               <a 
                 key={foundation.name} 
                 href={foundation.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white rounded-lg p-8 transition-transform hover:scale-105"
+                className="bg-white rounded-lg p-8 transition-transform hover:scale-105 w-full md:w-1/2"
               >
-                <div className="flex flex-col items-center">
-                  <div className="h-32 flex items-center justify-center">
-                    <img 
-                      src={foundation.logo} 
-                      alt={foundation.name}
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </div>
+                <div className="flex items-center justify-center h-32">
+                  <img 
+                    src={foundation.logo} 
+                    alt={foundation.name}
+                    className="max-h-full max-w-full object-contain"
+                  />
                 </div>
               </a>
             ))}
