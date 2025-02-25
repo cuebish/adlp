@@ -160,22 +160,22 @@ function App() {
               />
             </div>
             <div className="w-full md:w-1/2 mt-6 md:mt-0 md:pr-12 md:order-1">
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tight mb-4 md:mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight mb-3 md:mb-4">
                 {t.hero.title}
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed mb-6 md:mb-8">
+              <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-4 sm:mb-6 md:mb-8 max-w-xl">
                 {t.hero.subtitle}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a 
                   href={`/${currentLang}#events`}
-                  className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors text-center font-medium"
+                  className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors text-center font-medium text-base sm:text-lg"
                 >
                   {t.hero.cta.primary}
                 </a>
                 <a 
                   href={`/${currentLang}#contact`}
-                  className="border-2 border-green-600 text-green-600 px-6 py-3 rounded-lg hover:bg-green-50 transition-colors text-center font-medium"
+                  className="border-2 border-green-600 text-green-600 px-6 py-3 rounded-lg hover:bg-green-50 transition-colors text-center font-medium text-base sm:text-lg"
                 >
                   {t.hero.cta.secondary}
                 </a>
