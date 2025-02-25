@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import App from './App.tsx';
 import Register from './Register.tsx';
 import './index.css';
@@ -8,16 +9,30 @@ import './index.css';
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Navigate to="/en" replace />,
+  },
+  {
+    path: "/en/*",
     element: <App />,
   },
   {
-    path: "/register",
+    path: "/es/*",
+    element: <App />,
+  },
+  {
+    path: "/en/register",
+    element: <Register />,
+  },
+  {
+    path: "/es/register",
     element: <Register />,
   },
 ]);
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
   </StrictMode>
 );
