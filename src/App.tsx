@@ -50,8 +50,8 @@ function App() {
       name: "Humberto Javier Cuebas",
       role: "Consultant",
       image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/jr1.png?auto=format&fit=crop&q=80&w=400",
-      email: "humbertojr@amigosdelaplacita.org",
-      linkedin: "https://www.linkedin.com/in/humberto-cuebas-jr/"
+      email: "humberto.javier@amigosdelaplacita.org",
+      linkedin: "https://www.linkedin.com/in/hjcuebas/"
     }
   ];
 
