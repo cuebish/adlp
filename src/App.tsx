@@ -154,7 +154,7 @@ function App() {
             {/* Image moved above text for mobile, order changes on desktop */}
             <div className="w-full md:w-1/2 md:order-2">
               <img 
-                src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&q=80&w=2000"
+                src="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/ADLP1.png"
                 alt="Golf Course"
                 className="w-full h-[250px] md:h-[600px] object-cover rounded-lg"
               />
@@ -217,9 +217,9 @@ function App() {
           <div className="flex flex-col-reverse md:flex-row items-center gap-12">
             <div className="w-full md:w-1/2">
               <img 
-                src="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/ADLP1.png"
-                alt="Golf Tournament"
-                className="w-full h-[300px] md:h-[500px] object-cover rounded-lg"
+                src="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/ADLP_Logo.jpg"
+                alt="Amigos de la Placita Logo"
+                className="w-full h-[300px] md:h-[500px] object-contain rounded-lg"
               />
             </div>
             <div className="w-full md:w-1/2 space-y-6">
