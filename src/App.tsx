@@ -3,11 +3,13 @@ import { Calendar, Mail, MapPin, Phone, Menu, X, Linkedin } from 'lucide-react';
 import { useLanguage } from './hooks/useLanguage';
 import { translations } from './i18n/translations';
 import { LanguageSwitch } from './components/LanguageSwitch';
+import { useForm, ValidationError } from '@formspree/react';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { currentLang } = useLanguage();
   const t = translations[currentLang as keyof typeof translations];
+  const [state, handleSubmit] = useForm("xdkenoek"); // Replace with your Formspree form ID
 
   const memories = [
     {
@@ -368,28 +370,58 @@ function App() {
                   <span>info@amigosdelaplacita.org</span>
                 </div>
               </div>
-              <form className="space-y-4">
-                <input
-                  type="text"
-                  placeholder={t.contact.form.name}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                />
-                <input
-                  type="email"
-                  placeholder={t.contact.form.email}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                />
-                <textarea
-                  placeholder={t.contact.form.message}
-                  rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                ></textarea>
-                <button 
-                  className="w-full bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors"
-                >
-                  {t.contact.form.submit}
-                </button>
-              </form>
+              {state.succeeded ? (
+                <div className="bg-green-50 p-6 rounded-lg">
+                  <p className="text-green-600 font-medium text-center">
+                    {currentLang === 'en' ? 'Thank you for your message!' : '¡Gracias por tu mensaje!'}
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    placeholder={t.contact.form.name}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                  />
+                  <ValidationError prefix="Name" field="name" errors={state.errors} />
+                  
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder={t.contact.form.email}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                  />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} />
+                  
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder={t.contact.form.message}
+                    required
+                    rows={4}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                  ></textarea>
+                  <ValidationError prefix="Message" field="message" errors={state.errors} />
+                  
+                  <button 
+                    type="submit"
+                    disabled={state.submitting}
+                    className="w-full bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {state.submitting ? (
+                      currentLang === 'en' ? 'Sending...' : 'Enviando...'
+                    ) : (
+                      t.contact.form.submit
+                    )}
+                  </button>
+                  <ValidationError errors={state.errors} />
+                </form>
+              )}
             </div>
           </div>
         </div>
