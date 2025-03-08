@@ -58,7 +58,7 @@ export const translations = {
     sponsorship: {
       title: "Sponsorship Packages",
       backToHome: "Back to Home",
-      register: "Regístrate",
+      register: "Register",
       packages: {
         malanga: {
           name: "Malanga Sponsor",
