@@ -9,7 +9,7 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { currentLang } = useLanguage();
   const t = translations[currentLang as keyof typeof translations];
-  const [state, handleSubmit] = useForm("xdkenoek"); // Replace with your Formspree form ID
+  const [state, handleSubmit] = useForm("xdkenoek");
 
   const memories = [
     {
@@ -257,7 +257,7 @@ function App() {
                 <p className="text-gray-600">{t.events.description}</p>
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div>
-                    <strong>{t.events.details.date}:</strong> April 4th, 2025
+                    <strong>{t.events.details.date}:</strong> {currentLang === 'en' ? 'April 4th, 2025' : '4 de Abril del 2025'}
                   </div>
                   <div>
                     <strong>{t.events.details.time}:</strong> 8:00 AM - 5:00 PM
@@ -266,17 +266,25 @@ function App() {
                     <strong>{t.events.details.location}:</strong> Palmas del Mar - Humacao
                   </div>
                   <div>
-                    <strong>{t.events.details.fee}:</strong> $200 per player
+                    <strong>{t.events.details.fee}:</strong> $200 {currentLang === 'en' ? 'per player' : 'por jugador'}
                   </div>
                 </div>
-                <a 
-                  href="https://www.cognitoforms.com/AMIGOSDELAPLACITAGOLFCLASSICINC/_2025PlacitaOpenInscriptionForm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors mt-4"
-                >
-                  {t.events.register}
-                </a>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <a 
+                    href="https://www.cognitoforms.com/AMIGOSDELAPLACITAGOLFCLASSICINC/_2025PlacitaOpenInscriptionForm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors text-center"
+                  >
+                    {t.events.register}
+                  </a>
+                  <a 
+                    href={`/${currentLang}/sponsorship`}
+                    className="w-full bg-white border-2 border-green-600 text-green-600 px-6 py-2 rounded-lg hover:bg-green-50 transition-colors text-center"
+                  >
+                    {t.events.sponsorship}
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -363,7 +371,7 @@ function App() {
                 </div>
                 <div className="flex items-center">
                   <Phone className="text-green-600 mr-3" />
-                  <span>+1 (787) 555-0123</span>
+                  <span>+1 (787) 450-9669</span>
                 </div>
                 <div className="flex items-center">
                   <Mail className="text-green-600 mr-3" />

@@ -30,14 +30,15 @@ export const translations = {
     events: {
       title: "Upcoming Event",
       subtitle: "Placita Open 2025",
-      description: "Join us for our signature event of the year! The Placita Open brings together golf enthusiasts and community supporters for a day of friendly competition and charitable giving.",
+      description: "Join us for our signature 2-man scramble tournament! With more than 120 players expected, this premier event includes breakfast, an exciting Polo Tournament, exclusive gift bags, and continuous refreshments with our Oasis of Drinks and Food on the Court. The day concludes with a spectacular Gift Raffle, Awards Ceremony, and special presentations from the two Organizations that will benefit from the funds raised.",
       details: {
         date: "Date",
         time: "Time",
         location: "Location",
         fee: "Entry Fee"
       },
-      register: "Register Now"
+      register: "Register to Play",
+      sponsorship: "Sponsorship Packages"
     },
     gallery: {
       title: "Gallery"
@@ -52,6 +53,66 @@ export const translations = {
         email: "Your Email",
         message: "Your Message",
         submit: "Send Message"
+      }
+    },
+    sponsorship: {
+      title: "Sponsorship Packages",
+      backToHome: "Back to Home",
+      register: "Regístrate",
+      packages: {
+        malanga: {
+          name: "Malanga Sponsor",
+          benefits: [
+            "1 Exempt Player",
+            "Company Logo on Tournament Welcome Banner",
+            "Company Logo on Award Ceremony Banner",
+            "Company logo across the field",
+            "Mention at Award Ceremony"
+          ]
+        },
+        name: {
+          name: "Ñame Sponsor",
+          benefits: [
+            "2 Exempt Players",
+            "Company Logo on Tournament Welcome Banner",
+            "Company Logo on Award Ceremony Banner",
+            "Company logo on some of the holes of the course",
+            "Mention at Award Ceremony"
+          ]
+        },
+        yuca: {
+          name: "Yuca Sponsor",
+          benefits: [
+            "4 Exempt Players",
+            "Company Logo on Tournament Welcome Banner",
+            "Company Logo on Award Ceremony Banner",
+            "Company logo across the field",
+            "Mention at Award Ceremony",
+            "Access to place promotional material on the field"
+          ]
+        },
+        pana: {
+          name: "Pana Sponsor",
+          benefits: [
+            "6 Exempt Players",
+            "Tournament cap sponsor",
+            "Company Logo on Welcome Banner",
+            "Company Logos and Brands throughout the field",
+            "Primary Mention at Award Ceremony",
+            "Access to place Company promotional material in the field"
+          ]
+        },
+        aguacate: {
+          name: "Aguacate Sponsor",
+          benefits: [
+            "8 Exempt Players",
+            "Company Logo on Welcome Banner and Award Ceremony",
+            "Sponsor of the Tournament Polos with logos on the sleeves",
+            "Company Logos and Brands throughout the field",
+            "Primary Mention at Award Ceremony",
+            "Access to place Company promotional material in the field"
+          ]
+        }
       }
     },
     footer: {
@@ -89,14 +150,15 @@ export const translations = {
     events: {
       title: "Próximo Evento",
       subtitle: "Placita Open 2025",
-      description: "¡Únete a nuestro evento insignia del año! El Placita Open reúne a entusiastas del golf y colaboradores de la comunidad para un día de competencia amistosa y donaciones caritativas.",
+      description: "¡Únete a nuestro torneo insignia de scramble de 2 jugadores! Con más de 120 jugadores esperados, este evento premium incluye desayuno, un emocionante Torneo de Polo, bolsas de regalo exclusivas y refrigerios continuos con nuestro Oasis de Bebidas y Comida en la Cancha. El día concluye con una espectacular Rifa de Regalos, Ceremonia de Premiación y presentaciones especiales de las dos Organizaciones que se beneficiarán de los fondos recaudados.",
       details: {
         date: "Fecha",
         time: "Hora",
         location: "Ubicación",
         fee: "Cuota de Entrada"
       },
-      register: "Registrarse Ahora"
+      register: "Regístrate para Jugar",
+      sponsorship: "Paquetes de Patrocinio"
     },
     gallery: {
       title: "Galería"
@@ -111,6 +173,66 @@ export const translations = {
         email: "Tu Email",
         message: "Tu Mensaje",
         submit: "Enviar Mensaje"
+      }
+    },
+    sponsorship: {
+      title: "Paquetes de Patrocinio",
+      backToHome: "Volver al Inicio",
+      register: "Regístrate",
+      packages: {
+        malanga: {
+          name: "Patrocinador Malanga",
+          benefits: [
+            "1 Jugador Exento",
+            "Logo de la Empresa en Banner de Bienvenida del Torneo",
+            "Logo de la Empresa en Banner de Ceremonia de Premiación",
+            "Logo de la empresa en el campo",
+            "Mención en Ceremonia de Premiación"
+          ]
+        },
+        name: {
+          name: "Patrocinador Ñame",
+          benefits: [
+            "2 Jugadores Exentos",
+            "Logo de la Empresa en Banner de Bienvenida del Torneo",
+            "Logo de la Empresa en Banner de Ceremonia de Premiación",
+            "Logo de la empresa en algunos hoyos del campo",
+            "Mención en Ceremonia de Premiación"
+          ]
+        },
+        yuca: {
+          name: "Patrocinador Yuca",
+          benefits: [
+            "4 Jugadores Exentos",
+            "Logo de la Empresa en Banner de Bienvenida del Torneo",
+            "Logo de la Empresa en Banner de Ceremonia de Premiación",
+            "Logo de la empresa en el campo",
+            "Mención en Ceremonia de Premiación",
+            "Acceso para colocar material promocional en el campo"
+          ]
+        },
+        pana: {
+          name: "Patrocinador Pana",
+          benefits: [
+            "6 Jugadores Exentos",
+            "Patrocinador de la gorra del Torneo",
+            "Logo de la Empresa en Banner de Bienvenida",
+            "Logos y Marcas de la Empresa en todo el campo",
+            "Mención Principal en Ceremonia de Premiación",
+            "Acceso para colocar material promocional de la Empresa en el campo"
+          ]
+        },
+        aguacate: {
+          name: "Patrocinador Aguacate",
+          benefits: [
+            "8 Jugadores Exentos",
+            "Logo de la Empresa en Banner de Bienvenida y Ceremonia de Premiación",
+            "Patrocinador de los Polos del Torneo con logos en las mangas",
+            "Logos y Marcas de la Empresa en todo el campo",
+            "Mención Principal en Ceremonia de Premiación",
+            "Acceso para colocar material promocional de la Empresa en el campo"
+          ]
+        }
       }
     },
     footer: {
