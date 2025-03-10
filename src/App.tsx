@@ -187,44 +187,18 @@ function App() {
         </div>
       </section>
 
-      {/* Foundations */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8 tracking-tight">{t.foundations.title}</h2>
-          <div className="flex flex-col md:flex-row gap-8 justify-center items-center max-w-4xl mx-auto">
-            {foundations.map((foundation) => (
-              <a 
-                key={foundation.name} 
-                href={foundation.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white rounded-lg p-8 transition-transform hover:scale-105 w-full md:w-1/2"
-              >
-                <div className="flex items-center justify-center h-32">
-                  <img 
-                    src={foundation.logo} 
-                    alt={foundation.name}
-                    className="max-h-full max-w-full object-contain"
-                  />
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* About Us */}
       <section id="about" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col-reverse md:flex-row items-center gap-12">
-            <div className="w-full md:w-1/2">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="w-full md:w-1/2 order-1 md:order-1">
               <img 
                 src="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/ADLP_Logo.jpg"
                 alt="Amigos de la Placita Logo"
                 className="w-full h-[300px] md:h-[500px] object-contain rounded-lg"
               />
             </div>
-            <div className="w-full md:w-1/2 space-y-6">
+            <div className="w-full md:w-1/2 space-y-6 order-2 md:order-2">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900">{t.about.title}</h2>
               <p className="text-gray-600 leading-relaxed">{t.about.description1}</p>
               <p className="text-gray-600 leading-relaxed">{t.about.description2}</p>
@@ -237,6 +211,81 @@ function App() {
                   <div className="text-3xl font-bold text-green-600 mb-2">$100K+</div>
                   <div className="text-gray-600">{t.about.stats.funds}</div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Foundations */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-16 tracking-tight">{t.foundations.title}</h2>
+          
+          {/* Make-A-Wish */}
+          <div className="max-w-6xl mx-auto mb-24">
+            <div className="flex flex-col md:flex-row items-center gap-12">
+              <div className="w-full md:w-1/2 space-y-6 order-2 md:order-1">
+                <h3 className="text-2xl font-bold tracking-tight text-gray-900">Make-A-Wish Puerto Rico</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-green-600 mr-2">•</span>
+                    <span className="text-gray-600">Together, we can create wishes that will change the lives of children with serious illnesses.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-600 mr-2">•</span>
+                    <span className="text-gray-600">Make-A-Wish's mission is our common starting point and arrival point. It is what keeps us united, what we seek and, ultimately, what we do every day.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-600 mr-2">•</span>
+                    <span className="text-gray-600">Make-A-Wish grants the wishes of all eligible children and teens</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-600 mr-2">•</span>
+                    <span className="text-gray-600">Since 1980, Make-A-Wish has granted more than 550,000 wishes worldwide.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-600 mr-2">•</span>
+                    <span className="text-gray-600">In every community across the United States, including Puerto Rico, Make-A-Wish is dedicated to providing moments of hope, joy and transformation for our precious children and teens.</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="w-full md:w-1/2 order-1 md:order-2">
+                <div className="bg-white rounded-lg p-8 flex items-center justify-center h-[300px] md:h-[400px]">
+                  <img 
+                    src="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/MakeAWishPR.png"
+                    alt="Make A Wish Puerto Rico"
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 10-8 InService */}
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center gap-12">
+              <div className="w-full md:w-1/2 order-1 md:order-1">
+                <div className="bg-white rounded-lg p-8 flex items-center justify-center h-[300px] md:h-[400px]">
+                  <img 
+                    src="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/10-8InService.png"
+                    alt="10-8 InService"
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
+              </div>
+              <div className="w-full md:w-1/2 space-y-6 order-2 md:order-2">
+                <h3 className="text-2xl font-bold tracking-tight text-gray-900">10-8 InService</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-green-600 mr-2">•</span>
+                    <span className="text-gray-600">10-8 InService It is a non-profit organization created after the loss of a teenager to suicide. During the most difficult time of her life, the surviving mother vowed to find a way to help raise awareness about this unspoken issue and prevent the loss of other young lives to suicide.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-600 mr-2">•</span>
+                    <span className="text-gray-600">10-8 InService is committed to saving lives by raising awareness and empowering people to prevent and overcome bullying, cyberbullying and suicidal thoughts.</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
