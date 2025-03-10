@@ -62,19 +62,6 @@ function App() {
     }
   ];
 
-  const foundations = [
-    {
-      name: "Make A Wish PR",
-      logo: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/MakeAWishPR.png",
-      url: "https://wish.org/puertorico"
-    },
-    {
-      name: "10-8 In Service",
-      logo: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/10-8InService.png",
-      url: "https://10-8inservice.org/"
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-white">
       {/* Navbar */}
@@ -152,35 +139,37 @@ function App() {
       {/* Header */}
       <section id="home" className="pt-16 md:pt-24">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center">
-            {/* Image moved above text for mobile, order changes on desktop */}
-            <div className="w-full md:w-1/2 md:order-2">
-              <img 
-                src="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/ADLP1.png"
-                alt="Golf Course"
-                className="w-full h-[250px] md:h-[600px] object-cover rounded-lg"
-              />
-            </div>
-            <div className="w-full md:w-1/2 mt-6 md:mt-0 md:pr-12 md:order-1">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight mb-3 md:mb-4">
-                {t.hero.title}
-              </h1>
-              <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-4 sm:mb-6 md:mb-8 max-w-xl">
-                {t.hero.subtitle}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <a 
-                  href={`/${currentLang}#events`}
-                  className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors text-center font-medium text-base sm:text-lg"
-                >
-                  {t.hero.cta.primary}
-                </a>
-                <a 
-                  href={`/${currentLang}#contact`}
-                  className="border-2 border-green-600 text-green-600 px-6 py-3 rounded-lg hover:bg-green-50 transition-colors text-center font-medium text-base sm:text-lg"
-                >
-                  {t.hero.cta.secondary}
-                </a>
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center">
+              {/* Image moved above text for mobile, order changes on desktop */}
+              <div className="w-full md:w-1/2 md:order-2">
+                <img 
+                  src="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/ADLP1.png"
+                  alt="Golf Course"
+                  className="w-full h-[250px] md:h-[600px] object-cover rounded-lg"
+                />
+              </div>
+              <div className="w-full md:w-1/2 mt-6 md:mt-0 md:pr-12 md:order-1">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight mb-3 md:mb-4">
+                  {t.hero.title}
+                </h1>
+                <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-4 sm:mb-6 md:mb-8 max-w-xl">
+                  {t.hero.subtitle}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <a 
+                    href={`/${currentLang}#events`}
+                    className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors text-center font-medium text-base sm:text-lg"
+                  >
+                    {t.hero.cta.primary}
+                  </a>
+                  <a 
+                    href={`/${currentLang}#contact`}
+                    className="border-2 border-green-600 text-green-600 px-6 py-3 rounded-lg hover:bg-green-50 transition-colors text-center font-medium text-base sm:text-lg"
+                  >
+                    {t.hero.cta.secondary}
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -190,26 +179,28 @@ function App() {
       {/* About Us */}
       <section id="about" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="w-full md:w-1/2 order-1 md:order-1">
-              <img 
-                src="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/ADLP_Logo.jpg"
-                alt="Amigos de la Placita Logo"
-                className="w-full h-[300px] md:h-[500px] object-contain rounded-lg"
-              />
-            </div>
-            <div className="w-full md:w-1/2 space-y-6 order-2 md:order-2">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900">{t.about.title}</h2>
-              <p className="text-gray-600 leading-relaxed">{t.about.description1}</p>
-              <p className="text-gray-600 leading-relaxed">{t.about.description2}</p>
-              <div className="grid grid-cols-2 gap-6 pt-4">
-                <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <div className="text-3xl font-bold text-green-600 mb-2">10+</div>
-                  <div className="text-gray-600">{t.about.stats.years}</div>
-                </div>
-                <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <div className="text-3xl font-bold text-green-600 mb-2">$100K+</div>
-                  <div className="text-gray-600">{t.about.stats.funds}</div>
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center gap-12">
+              <div className="w-full md:w-1/2 order-1 md:order-1">
+                <img 
+                  src="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/ADLP_Logo.jpg"
+                  alt="Amigos de la Placita Logo"
+                  className="w-full h-[300px] md:h-[500px] object-contain rounded-lg"
+                />
+              </div>
+              <div className="w-full md:w-1/2 space-y-6 order-2 md:order-2">
+                <h2 className="text-3xl font-bold tracking-tight text-gray-900">{t.about.title}</h2>
+                <p className="text-gray-600 leading-relaxed">{t.about.description1}</p>
+                <p className="text-gray-600 leading-relaxed">{t.about.description2}</p>
+                <div className="grid grid-cols-2 gap-6 pt-4">
+                  <div className="bg-white p-4 rounded-lg shadow-sm">
+                    <div className="text-3xl font-bold text-green-600 mb-2">10+</div>
+                    <div className="text-gray-600">{t.about.stats.years}</div>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg shadow-sm">
+                    <div className="text-3xl font-bold text-green-600 mb-2">$100K+</div>
+                    <div className="text-gray-600">{t.about.stats.funds}</div>
+                  </div>
                 </div>
               </div>
             </div>
