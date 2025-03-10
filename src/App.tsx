@@ -384,9 +384,9 @@ function App() {
 
       {/* Contact */}
       <section id="contact" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 flex flex-col items-center">
           <h2 className="text-3xl font-bold text-center mb-12 tracking-tight">{t.contact.title}</h2>
-          <div className="max-w-2xl mx- auto">
+          <div className="max-w-2xl w-full">
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <div className="flex items-center">
