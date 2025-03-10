@@ -217,28 +217,14 @@ function App() {
           <div className="max-w-6xl mx-auto mb-24">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="w-full md:w-1/2 space-y-6 order-2 md:order-1">
-                <h3 className="text-2xl font-bold tracking-tight text-gray-900">Make-A-Wish Puerto Rico</h3>
+                <h3 className="text-2xl font-bold tracking-tight text-gray-900">{t.foundations.makeAWish.title}</h3>
                 <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
-                    <span className="text-gray-600">Together, we can create wishes that will change the lives of children with serious illnesses.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
-                    <span className="text-gray-600">Make-A-Wish's mission is our common starting point and arrival point. It is what keeps us united, what we seek and, ultimately, what we do every day.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
-                    <span className="text-gray-600">Make-A-Wish grants the wishes of all eligible children and teens</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
-                    <span className="text-gray-600">Since 1980, Make-A-Wish has granted more than 550,000 wishes worldwide.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
-                    <span className="text-gray-600">In every community across the United States, including Puerto Rico, Make-A-Wish is dedicated to providing moments of hope, joy and transformation for our precious children and teens.</span>
-                  </li>
+                  {t.foundations.makeAWish.bullets.map((bullet, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="text-green-600 mr-2">•</span>
+                      <span className="text-gray-600">{bullet}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className="w-full md:w-1/2 order-1 md:order-2">
@@ -266,65 +252,15 @@ function App() {
                 </div>
               </div>
               <div className="w-full md:w-1/2 space-y-6 order-2 md:order-2">
-                <h3 className="text-2xl font-bold tracking-tight text-gray-900">10-8 InService</h3>
+                <h3 className="text-2xl font-bold tracking-tight text-gray-900">{t.foundations.tenEight.title}</h3>
                 <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
-                    <span className="text-gray-600">10-8 InService It is a non-profit organization created after the loss of a teenager to suicide. During the most difficult time of her life, the surviving mother vowed to find a way to help raise awareness about this unspoken issue and prevent the loss of other young lives to suicide.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
-                    <span className="text-gray-600">10-8 InService is committed to saving lives by raising awareness and empowering people to prevent and overcome bullying, cyberbullying and suicidal thoughts.</span>
-                  </li>
+                  {t.foundations.tenEight.bullets.map((bullet, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="text-green-600 mr-2">•</span>
+                      <span className="text-gray-600">{bullet}</span>
+                    </li>
+                  ))}
                 </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Events */}
-      <section id="events" className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 tracking-tight">{t.events.title}</h2>
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-green-50 rounded-lg p-8 shadow-lg">
-              <div className="flex items-center mb-4">
-                <Calendar className="text-green-600 mr-2" />
-                <h3 className="text-xl font-semibold tracking-tight">{t.events.subtitle}</h3>
-              </div>
-              <div className="space-y-4">
-                <p className="text-gray-600">{t.events.description}</p>
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <strong>{t.events.details.date}:</strong> {currentLang === 'en' ? 'April 4th, 2025' : '4 de Abril del 2025'}
-                  </div>
-                  <div>
-                    <strong>{t.events.details.time}:</strong> 8:00 AM - 5:00 PM
-                  </div>
-                  <div>
-                    <strong>{t.events.details.location}:</strong> Palmas del Mar - Humacao
-                  </div>
-                  <div>
-                    <strong>{t.events.details.fee}:</strong> $200 {currentLang === 'en' ? 'per player' : 'por jugador'}
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <a 
-                    href="https://www.cognitoforms.com/AMIGOSDELAPLACITAGOLFCLASSICINC/_2025PlacitaOpenInscriptionForm"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors text-center"
-                  >
-                    {t.events.register}
-                  </a>
-                  <a 
-                    href={`/${currentLang}/sponsorship`}
-                    className="w-full bg-white border-2 border-green-600 text-green-600 px-6 py-2 rounded-lg hover:bg-green-50 transition-colors text-center"
-                  >
-                    {t.events.sponsorship}
-                  </a>
-                </div>
               </div>
             </div>
           </div>
@@ -402,7 +338,7 @@ function App() {
       <section id="contact" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 tracking-tight">{t.contact.title}</h2>
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-2xl mx- auto">
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <div className="flex items-center">

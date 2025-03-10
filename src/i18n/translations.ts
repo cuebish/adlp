@@ -16,7 +16,24 @@ export const translations = {
       }
     },
     foundations: {
-      title: "Supporting Great Causes"
+      title: "Supporting Great Causes",
+      makeAWish: {
+        title: "Make-A-Wish Puerto Rico",
+        bullets: [
+          "Together, we can create wishes that will change the lives of children with serious illnesses.",
+          "Make-A-Wish's mission is our common starting point and arrival point. It is what keeps us united, what we seek and, ultimately, what we do every day.",
+          "Make-A-Wish grants the wishes of all eligible children and teens",
+          "Since 1980, Make-A-Wish has granted more than 550,000 wishes worldwide.",
+          "In every community across the United States, including Puerto Rico, Make-A-Wish is dedicated to providing moments of hope, joy and transformation for our precious children and teens."
+        ]
+      },
+      tenEight: {
+        title: "10-8 InService",
+        bullets: [
+          "10-8 InService It is a non-profit organization created after the loss of a teenager to suicide. During the most difficult time of her life, the surviving mother vowed to find a way to help raise awareness about this unspoken issue and prevent the loss of other young lives to suicide.",
+          "10-8 InService is committed to saving lives by raising awareness and empowering people to prevent and overcome bullying, cyberbullying and suicidal thoughts."
+        ]
+      }
     },
     about: {
       title: "About Amigos de la Placita",
@@ -136,7 +153,24 @@ export const translations = {
       }
     },
     foundations: {
-      title: "Apoyando Grandes Causas"
+      title: "Apoyando Grandes Causas",
+      makeAWish: {
+        title: "Make-A-Wish Puerto Rico",
+        bullets: [
+          "Juntos, podemos crear deseos que cambiarán las vidas de niños con enfermedades graves.",
+          "La misión de Make-A-Wish es nuestro punto de partida y llegada común. Es lo que nos mantiene unidos, lo que buscamos y, en última instancia, lo que hacemos todos los días.",
+          "Make-A-Wish concede los deseos de todos los niños y adolescentes elegibles",
+          "Desde 1980, Make-A-Wish ha concedido más de 550,000 deseos en todo el mundo.",
+          "En cada comunidad de los Estados Unidos, incluyendo Puerto Rico, Make-A-Wish se dedica a proporcionar momentos de esperanza, alegría y transformación para nuestros preciosos niños y adolescentes."
+        ]
+      },
+      tenEight: {
+        title: "10-8 InService",
+        bullets: [
+          "10-8 InService es una organización sin fines de lucro creada después de la pérdida de un adolescente por suicidio. Durante el momento más difícil de su vida, la madre sobreviviente se comprometió a encontrar una manera de ayudar a crear conciencia sobre este problema no hablado y prevenir la pérdida de otras vidas jóvenes por suicidio.",
+          "10-8 InService está comprometido a salvar vidas mediante la concientización y el empoderamiento de las personas para prevenir y superar el acoso escolar, el ciberacoso y los pensamientos suicidas."
+        ]
+      }
     },
     about: {
       title: "Sobre Amigos de la Placita",
