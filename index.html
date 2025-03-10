@@ -38,6 +38,17 @@
 
       gtag('config', 'G-17ZRQBXTZ2');
     </script>
+    <!-- Amplitude -->
+    <script src="https://cdn.amplitude.com/libs/analytics-browser-2.11.1-min.js"></script>
+    <script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.8.0-min.js"></script>
+    <script>
+      window.addEventListener('load', function() {
+        if (window.amplitude && window.sessionReplay) {
+          window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));
+          window.amplitude.init('e44db146841fa45f307cf6712c9d65b2', {"autocapture":{"elementInteractions":true}});
+        }
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>
