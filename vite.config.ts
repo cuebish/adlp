@@ -7,4 +7,9 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  server: {
+    // Enable SPA fallback to handle client-side routing
+    proxy: {},
+    historyApiFallback: true
+  }
 });
