@@ -6,6 +6,8 @@ import App from './App.tsx';
 import Register from './Register.tsx';
 import Sponsorship from './pages/Sponsorship.tsx';
 import Donations from './pages/Donations.tsx';
+import PlayerRegistration from './pages/PlayerRegistration.tsx';
+import SponsorshipRegistration from './pages/SponsorshipRegistration.tsx';
 import './index.css';
 
 const router = createBrowserRouter([
@@ -44,6 +46,22 @@ const router = createBrowserRouter([
   {
     path: "/es/donations",
     element: <Donations />,
+  },
+  {
+    path: "/en/register/player",
+    element: <PlayerRegistration />,
+  },
+  {
+    path: "/es/register/player",
+    element: <PlayerRegistration />,
+  },
+  {
+    path: "/en/register/sponsorship",
+    element: <SponsorshipRegistration />,
+  },
+  {
+    path: "/es/register/sponsorship",
+    element: <SponsorshipRegistration />,
   },
 ]);
 

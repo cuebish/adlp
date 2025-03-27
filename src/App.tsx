@@ -161,7 +161,7 @@ function App() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <a 
-                    href={`/${currentLang}#events`}
+                    href={`/${currentLang}/register/player`}
                     className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors text-center font-medium text-base sm:text-lg"
                   >
                     {t.hero.cta.primary}
@@ -239,9 +239,7 @@ function App() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <a 
-                    href="https://www.cognitoforms.com/AMIGOSDELAPLACITAGOLFCLASSICINC/_2025PlacitaOpenInscriptionForm"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={`/${currentLang}/register/player`}
                     className="w-full bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors text-center"
                   >
                     {t.events.register}

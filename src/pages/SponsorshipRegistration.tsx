@@ -4,30 +4,7 @@ import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../i18n/translations';
 import { LanguageSwitch } from '../components/LanguageSwitch';
 
-const sponsorshipPackages = [
-  {
-    key: 'malanga',
-    price: "$1,000.00"
-  },
-  {
-    key: 'name',
-    price: "$2,000.00"
-  },
-  {
-    key: 'yuca',
-    price: "$5,000.00"
-  },
-  {
-    key: 'pana',
-    price: "$8,000.00"
-  },
-  {
-    key: 'aguacate',
-    price: "$10,000.00"
-  }
-];
-
-function Sponsorship() {
+function SponsorshipRegistration() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { currentLang } = useLanguage();
   const t = translations[currentLang as keyof typeof translations];
@@ -110,42 +87,21 @@ function Sponsorship() {
       </div>
 
       {/* Main Content */}
-      <div className="pt-16">
-        <div className="container mx-auto px-4 py-12">
-          <h1 className="text-4xl font-bold text-center mb-12">
-            {t.sponsorship.title}
-          </h1>
-          
-          <div className="space-y-6 max-w-6xl mx-auto">
-            {sponsorshipPackages.map((pkg) => (
-              <div 
-                key={pkg.key}
-                className="bg-white rounded-lg shadow-lg overflow-hidden border border-green-200 hover:border-green-500 transition-colors"
-              >
-                <div className="flex flex-col md:flex-row">
-                  <div className="bg-green-600 text-white p-8 md:w-1/3">
-                    <h3 className="text-2xl font-bold mb-2">{t.sponsorship.packages[pkg.key].name}</h3>
-                    <div className="text-4xl font-bold">{pkg.price}</div>
-                  </div>
-                  <div className="p-8 md:w-2/3">
-                    <ul className="space-y-3 mb-6">
-                      {t.sponsorship.packages[pkg.key].benefits.map((benefit, index) => (
-                        <li key={index} className="flex items-start">
-                          <span className="text-green-600 mr-2">•</span>
-                          <span>{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <a
-                      href={`/${currentLang}/register/sponsorship`}
-                      className="block w-full bg-white border-2 border-green-600 text-green-600 px-6 py-3 rounded-lg hover:bg-green-50 transition-colors text-center"
-                    >
-                      {t.sponsorship.register}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
+      <div className="pt-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h1 className="text-3xl font-bold text-center mb-8">
+              {currentLang === 'en' ? 'Sponsorship Registration' : 'Registro de Patrocinio'}
+            </h1>
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <iframe 
+                src="https://www.cognitoforms.com/f/fOVVQ72VBkKUi8WdktrZcg/6" 
+                style={{border: 0, width: '100%'}} 
+                height="1466"
+                allow="payment"
+              ></iframe>
+              <script src="https://www.cognitoforms.com/f/iframe.js"></script>
+            </div>
           </div>
         </div>
       </div>
@@ -160,4 +116,4 @@ function Sponsorship() {
   );
 }
 
-export default Sponsorship;
+export default SponsorshipRegistration;
