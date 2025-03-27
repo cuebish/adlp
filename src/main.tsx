@@ -5,6 +5,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import App from './App.tsx';
 import Register from './Register.tsx';
 import Sponsorship from './pages/Sponsorship.tsx';
+import Donations from './pages/Donations.tsx';
 import './index.css';
 
 const router = createBrowserRouter([
@@ -35,6 +36,14 @@ const router = createBrowserRouter([
   {
     path: "/es/sponsorship",
     element: <Sponsorship />,
+  },
+  {
+    path: "/en/donations",
+    element: <Donations />,
+  },
+  {
+    path: "/es/donations",
+    element: <Donations />,
   },
 ]);
 

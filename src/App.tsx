@@ -167,7 +167,7 @@ function App() {
                     {t.hero.cta.primary}
                   </a>
                   <a 
-                    href={`/${currentLang}#contact`}
+                    href={`/${currentLang}/donations`}
                     className="border-2 border-green-600 text-green-600 px-6 py-3 rounded-lg hover:bg-green-50 transition-colors text-center font-medium text-base sm:text-lg"
                   >
                     {t.hero.cta.secondary}

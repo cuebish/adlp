@@ -12,7 +12,7 @@ export const translations = {
       subtitle: "Join us in our mission to create positive change in Puerto Rico through charitable golf events and community initiatives.",
       cta: {
         primary: "2025 Placita Open",
-        secondary: "Contact Us"
+        secondary: "Donations"
       }
     },
     foundations: {
@@ -149,7 +149,7 @@ export const translations = {
       subtitle: "Únete a nuestra misión de crear un cambio positivo en Puerto Rico a través de eventos benéficos de golf e iniciativas comunitarias.",
       cta: {
         primary: "Placita Open 2025",
-        secondary: "Contáctanos"
+        secondary: "Donaciones"
       }
     },
     foundations: {
