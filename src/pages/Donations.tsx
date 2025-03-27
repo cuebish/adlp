@@ -92,8 +92,13 @@ function Donations() {
           <div className="max-w-3xl mx-auto">
             <h1 className="text-3xl font-bold text-center mb-8">{currentLang === 'en' ? 'Make a Donation' : 'Hacer una Donación'}</h1>
             <div className="bg-white rounded-lg shadow-lg p-6">
-              <div id="donations-form"></div>
-              <script src="https://www.cognitoforms.com/f/seamless.js" data-key="fOVVQ72VBkKUi8WdktrZcg" data-form="8"></script>
+              <iframe 
+                src="https://www.cognitoforms.com/f/fOVVQ72VBkKUi8WdktrZcg/8" 
+                style={{border: 0, width: '100%'}} 
+                height="1052"
+                allow="payment"
+              ></iframe>
+              <script src="https://www.cognitoforms.com/f/iframe.js"></script>
             </div>
           </div>
         </div>
