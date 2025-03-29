@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../i18n/translations';
@@ -8,6 +8,20 @@ function Donations() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { currentLang } = useLanguage();
   const t = translations[currentLang as keyof typeof translations];
+
+  useEffect(() => {
+    // Load Cognito Forms seamless script
+    const script = document.createElement('script');
+    script.src = 'https://www.cognitoforms.com/f/seamless.js';
+    script.setAttribute('data-key', 'Muy2UY3MEke97JKU-QCXPA');
+    script.setAttribute('data-form', '38');
+    document.getElementById('form1')?.appendChild(script);
+
+    return () => {
+      // Cleanup script when component unmounts
+      script.remove();
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
@@ -92,13 +106,7 @@ function Donations() {
           <div className="max-w-3xl mx-auto">
             <h1 className="text-3xl font-bold text-center mb-8">{currentLang === 'en' ? 'Make a Donation' : 'Hacer una Donación'}</h1>
             <div className="bg-white rounded-lg shadow-lg p-6">
-              <iframe 
-                src="https://www.cognitoforms.com/f/fOVVQ72VBkKUi8WdktrZcg/8" 
-                style={{border: 0, width: '100%'}} 
-                height="1052"
-                allow="payment"
-              ></iframe>
-              <script src="https://www.cognitoforms.com/f/iframe.js"></script>
+              <div id="form1" className="min-h-[600px]"></div>
             </div>
           </div>
         </div>
