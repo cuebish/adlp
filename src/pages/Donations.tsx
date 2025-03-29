@@ -13,8 +13,8 @@ function Donations() {
     // Load Cognito Forms seamless script
     const script = document.createElement('script');
     script.src = 'https://www.cognitoforms.com/f/seamless.js';
-    script.setAttribute('data-key', 'Muy2UY3MEke97JKU-QCXPA');
-    script.setAttribute('data-form', '38');
+    script.setAttribute('data-key', 'fOVVQ72VBkKUi8WdktrZcg');
+    script.setAttribute('data-form', '8');
     document.getElementById('form1')?.appendChild(script);
 
     return () => {
