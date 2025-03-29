@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../i18n/translations';
@@ -8,6 +8,20 @@ function PlayerRegistration() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { currentLang } = useLanguage();
   const t = translations[currentLang as keyof typeof translations];
+
+  useEffect(() => {
+    // Load Cognito Forms seamless script
+    const script = document.createElement('script');
+    script.src = 'https://www.cognitoforms.com/f/seamless.js';
+    script.setAttribute('data-key', 'fOVVQ72VBkKUi8WdktrZcg');
+    script.setAttribute('data-form', '5');
+    document.getElementById('form2')?.appendChild(script);
+
+    return () => {
+      // Cleanup script when component unmounts
+      script.remove();
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
@@ -94,13 +108,7 @@ function PlayerRegistration() {
               {currentLang === 'en' ? 'Player Registration' : 'Registro de Jugador'}
             </h1>
             <div className="bg-white rounded-lg shadow-lg p-6">
-              <iframe 
-                src="https://www.cognitoforms.com/f/fOVVQ72VBkKUi8WdktrZcg/5" 
-                style={{border: 0, width: '100%'}} 
-                height="1436"
-                allow="payment"
-              ></iframe>
-              <script src="https://www.cognitoforms.com/f/iframe.js"></script>
+              <div id="form2" className="min-h-[600px]"></div>
             </div>
           </div>
         </div>
