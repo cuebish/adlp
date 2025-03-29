@@ -8,8 +8,15 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   server: {
-    // Enable SPA fallback to handle client-side routing
-    proxy: {},
+    host: true,
+    port: 5173,
+    strictPort: true,
+    cors: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+    },
     historyApiFallback: true
   }
 });

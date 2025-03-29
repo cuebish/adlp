@@ -145,7 +145,7 @@ function App() {
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row items-center">
               {/* Image moved above text for mobile, order changes on desktop */}
-              <div className="w-full md:w-1/2 md:order-2">
+              <div className="w-full md:w-1/2 md:order-2 mt-8 md:mt-0">
                 <img 
                   src="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/ADLP1.png"
                   alt="Golf Course"
@@ -228,7 +228,7 @@ function App() {
                     <strong>{t.events.details.date}:</strong> {currentLang === 'en' ? 'April 4th, 2025' : '4 de Abril del 2025'}
                   </div>
                   <div>
-                    <strong>{t.events.details.time}:</strong> 8:00 AM - 5:00 PM
+                    <strong>{t.events.details.time}:</strong> {currentLang === 'en' ? 'Registration: 7:15 AM | Tee Off: 9:00 AM' : 'Registro: 7:15 AM | Inicio: 9:00 AM'}
                   </div>
                   <div>
                     <strong>{t.events.details.location}:</strong> Palmas del Mar - Humacao
