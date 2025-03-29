@@ -161,7 +161,7 @@ function App() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <a 
-                    href={`/${currentLang}/register/player`}
+                    href={`/${currentLang}#events`}
                     className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors text-center font-medium text-base sm:text-lg"
                   >
                     {t.hero.cta.primary}
