@@ -2,6 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Preconnect hints for performance -->
+    <link rel="preconnect" href="https://amigosdelaplacita.s3.us-east-2.amazonaws.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://cdn.amplitude.com">
+    <link rel="dns-prefetch" href="https://www.cognitoforms.com">
+    <link rel="dns-prefetch" href="https://formspree.io">
+
     <link rel="icon" type="image/png" href="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/favicon/ADLP_favicon_16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/favicon/ADLP_favicon_32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/favicon/ADLP_favicon_64x64.png" sizes="64x64">
@@ -10,7 +19,6 @@
     <link rel="icon" type="image/png" href="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/favicon/ADLP_favicon_512x512.png" sizes="512x512">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amigos de la Placita</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <meta name="robots" content="index, follow">
     <meta name="description" content="Amigos de la Placita - Making a difference through golf in Puerto Rico. Join our charitable events supporting Make-A-Wish Foundation and 10-8 InService.">
     <meta name="keywords" content="golf charity, Puerto Rico golf, Make-A-Wish Foundation, 10-8 InService, charitable events, golf tournament, Placita Open">
@@ -29,18 +37,85 @@
     <link rel="alternate" hreflang="es" href="https://amigosdelaplacita.org/es">
     <meta name="geo.region" content="PR">
     <meta name="geo.placename" content="San Juan">
+
+    <!-- JSON-LD Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NonProfit",
+      "name": "Amigos de la Placita",
+      "alternateName": "ADLP",
+      "url": "https://amigosdelaplacita.org",
+      "logo": "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/ADLP_Logo.jpg",
+      "description": "Amigos de la Placita is a nonprofit organization combining golf with charitable giving in Puerto Rico, supporting Make-A-Wish Puerto Rico and 10-8 InService.",
+      "email": "info@amigosdelaplacita.org",
+      "telephone": "+1-787-450-9669",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Juan",
+        "addressRegion": "PR",
+        "addressCountry": "PR"
+      },
+      "foundingDate": "2015",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Puerto Rico"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/erickson-figueras-8b917ab/"
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data - Event -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsEvent",
+      "name": "Placita Open 2025",
+      "description": "Annual charity golf tournament supporting Make-A-Wish Puerto Rico and 10-8 InService. Features a 2-man scramble format with breakfast, gift bags, and awards ceremony.",
+      "startDate": "2025-04-04T07:15:00-04:00",
+      "endDate": "2025-04-04T18:00:00-04:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Palmas del Mar",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Humacao",
+          "addressRegion": "PR",
+          "addressCountry": "PR"
+        }
+      },
+      "organizer": {
+        "@type": "NonProfit",
+        "name": "Amigos de la Placita",
+        "url": "https://amigosdelaplacita.org"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "200.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://amigosdelaplacita.org/en/register/player"
+      },
+      "sport": "Golf",
+      "image": "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/ADLP_Logo_Small.JPG"
+    }
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-17ZRQBXTZ2"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-17ZRQBXTZ2');
     </script>
-    <!-- Amplitude -->
-    <script src="https://cdn.amplitude.com/libs/analytics-browser-2.11.1-min.js"></script>
-    <script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.8.0-min.js"></script>
+    <!-- Amplitude (deferred loading) -->
+    <script defer src="https://cdn.amplitude.com/libs/analytics-browser-2.11.1-min.js"></script>
+    <script defer src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.8.0-min.js"></script>
     <script>
       window.addEventListener('load', function() {
         if (window.amplitude && window.sessionReplay) {

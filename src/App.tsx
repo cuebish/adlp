@@ -1,40 +1,46 @@
-import React, { useState } from 'react';
-import { Calendar, Mail, MapPin, Phone, Menu, X, Linkedin } from 'lucide-react';
+import React from 'react';
+import { Calendar, Mail, MapPin, Phone, Linkedin } from 'lucide-react';
 import { useLanguage } from './hooks/useLanguage';
 import { translations } from './i18n/translations';
-import { LanguageSwitch } from './components/LanguageSwitch';
+import { Navbar } from './components/Navbar';
 import { useForm, ValidationError } from '@formspree/react';
+import { config, getS3Url } from './config';
 
 function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { currentLang } = useLanguage();
   const t = translations[currentLang as keyof typeof translations];
-  const [state, handleSubmit] = useForm("xdkenoek");
+  const [state, handleSubmit] = useForm(config.formspree.contactFormId);
 
   const memories = [
     {
-      image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/events1.png",
-      title: "Golf Classic 2023"
+      image: getS3Url('events1.png'),
+      titleEn: "Golfers gathering at Placita Open charity tournament",
+      titleEs: "Golfistas reunidos en el torneo benéfico Placita Open"
     },
     {
-      image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/events2.png",
-      title: "Community Golf Day"
+      image: getS3Url('events2.png'),
+      titleEn: "Community members enjoying golf day event",
+      titleEs: "Miembros de la comunidad disfrutando del día de golf"
     },
     {
-      image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/events3.png",
-      title: "Youth Golf Program"
+      image: getS3Url('events3.png'),
+      titleEn: "Youth participants learning golf at charity program",
+      titleEs: "Jóvenes participantes aprendiendo golf en programa benéfico"
     },
     {
-      image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/events4.png",
-      title: "Charity Tournament"
+      image: getS3Url('events4.png'),
+      titleEn: "Charity tournament award ceremony celebration",
+      titleEs: "Celebración de la ceremonia de premiación del torneo benéfico"
     },
     {
-      image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/events5.png",
-      title: "Summer Golf Camp"
+      image: getS3Url('events5.png'),
+      titleEn: "Summer golf camp participants on the green",
+      titleEs: "Participantes del campamento de golf de verano en el campo"
     },
     {
-      image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/events6.png",
-      title: "Community Gathering"
+      image: getS3Url('events6.png'),
+      titleEn: "Community gathering supporting charitable causes",
+      titleEs: "Reunión comunitaria apoyando causas benéficas"
     }
   ];
 
@@ -42,21 +48,21 @@ function App() {
     {
       name: "Erickson Figueras",
       role: "President",
-      image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/erickson1.png?auto=format&fit=crop&q=80&w=400",
+      image: getS3Url('erickson1.png'),
       email: "erickson@amigosdelaplacita.org",
       linkedin: "https://www.linkedin.com/in/erickson-figueras-8b917ab/"
     },
     {
       name: "Humberto Cuebas",
       role: "Treasurer",
-      image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/sr1.png?auto=format&fit=crop&q=80&w=400",
+      image: getS3Url('sr1.png'),
       email: "humberto@amigosdelaplacita.org",
       linkedin: "https://www.linkedin.com/in/humberto-cuebas-18b710bb/"
     },
     {
       name: "Humberto Javier Cuebas",
       role: "Consultant",
-      image: "https://amigosdelaplacita.s3.us-east-2.amazonaws.com/jr1.png?auto=format&fit=crop&q=80&w=400",
+      image: getS3Url('jr1.png'),
       email: "humberto.javier@amigosdelaplacita.org",
       linkedin: "https://www.linkedin.com/in/hjcuebas/"
     }
@@ -64,91 +70,20 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navbar */}
-      <div className="fixed w-full z-10">
-        <nav className="bg-white text-gray-800">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center justify-between h-16">
-              {/* Logo */}
-              <a href={`/${currentLang}`} className="flex-shrink-0">
-                <img src="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/ADLP_Logo.jpg" alt="Amigos de la Placita" className="h-12 w-auto" />
-              </a>
+      <Navbar />
 
-              {/* Desktop Navigation */}
-              <div className="hidden md:flex items-center space-x-8">
-                <a href={`/${currentLang}#home`} className="hover:text-green-600 font-medium">{t.nav.home}</a>
-                <a href={`/${currentLang}#about`} className="hover:text-green-600 font-medium">{t.nav.about}</a>
-                <a href={`/${currentLang}#events`} className="hover:text-green-600 font-medium">{t.nav.events}</a>
-                <a href={`/${currentLang}#team`} className="hover:text-green-600 font-medium">{t.nav.team}</a>
-                <LanguageSwitch />
-              </div>
-
-              {/* Mobile Navigation */}
-              <div className="flex md:hidden items-center space-x-4">
-                <LanguageSwitch />
-                <button
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="text-gray-600 hover:text-gray-900 focus:outline-none"
-                >
-                  {isMenuOpen ? (
-                    <X className="h-6 w-6" />
-                  ) : (
-                    <Menu className="h-6 w-6" />
-                  )}
-                </button>
-              </div>
-            </div>
-
-            {/* Mobile Menu */}
-            {isMenuOpen && (
-              <div className="md:hidden">
-                <div className="px-2 pt-2 pb-3 space-y-1 bg-white rounded-lg shadow-lg mt-2">
-                  <a 
-                    href={`/${currentLang}#home`}
-                    className="block px-3 py-2 rounded-md text-base font-medium hover:bg-green-50 hover:text-green-600"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {t.nav.home}
-                  </a>
-                  <a 
-                    href={`/${currentLang}#about`}
-                    className="block px-3 py-2 rounded-md text-base font-medium hover:bg-green-50 hover:text-green-600"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {t.nav.about}
-                  </a>
-                  <a 
-                    href={`/${currentLang}#events`}
-                    className="block px-3 py-2 rounded-md text-base font-medium hover:bg-green-50 hover:text-green-600"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {t.nav.events}
-                  </a>
-                  <a 
-                    href={`/${currentLang}#team`}
-                    className="block px-3 py-2 rounded-md text-base font-medium hover:bg-green-50 hover:text-green-600"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {t.nav.team}
-                  </a>
-                </div>
-              </div>
-            )}
-          </div>
-        </nav>
-        <div className="h-[5px] bg-green-600"></div>
-      </div>
-
-      {/* Header */}
-      <section id="home" className="pt-16 md:pt-24">
+      {/* Main Content */}
+      <main id="main-content">
+        {/* Header */}
+        <section id="home" className="pt-16 md:pt-24">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row items-center">
               {/* Image moved above text for mobile, order changes on desktop */}
               <div className="w-full md:w-1/2 md:order-2 mt-8 md:mt-0">
-                <img 
-                  src="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/ADLP1.png"
-                  alt="Golf Course"
+                <img
+                  src={getS3Url('ADLP1.png')}
+                  alt={currentLang === 'en' ? 'Scenic golf course at Palmas del Mar in Puerto Rico' : 'Campo de golf escénico en Palmas del Mar, Puerto Rico'}
                   className="w-full h-[250px] md:h-[600px] object-cover rounded-lg"
                 />
               </div>
@@ -185,9 +120,10 @@ function App() {
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="w-full md:w-1/2 order-1 md:order-1">
-                <img 
-                  src="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/ADLP_Logo.jpg"
+                <img
+                  src={getS3Url('ADLP_Logo.jpg')}
                   alt="Amigos de la Placita Logo"
+                  loading="lazy"
                   className="w-full h-[300px] md:h-[500px] object-contain rounded-lg"
                 />
               </div>
@@ -278,9 +214,10 @@ function App() {
               </div>
               <div className="w-full md:w-1/2 order-1 md:order-2">
                 <div className="bg-white rounded-lg p-8 flex items-center justify-center h-[300px] md:h-[400px]">
-                  <img 
-                    src="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/MakeAWishPR.png"
-                    alt="Make A Wish Puerto Rico"
+                  <img
+                    src={getS3Url('MakeAWishPR.png')}
+                    alt={currentLang === 'en' ? 'Make-A-Wish Puerto Rico logo - Granting wishes to children with critical illnesses' : 'Logo de Make-A-Wish Puerto Rico - Concediendo deseos a niños con enfermedades críticas'}
+                    loading="lazy"
                     className="max-h-full max-w-full object-contain"
                   />
                 </div>
@@ -293,9 +230,10 @@ function App() {
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="w-full md:w-1/2 order-1 md:order-1">
                 <div className="bg-white rounded-lg p-8 flex items-center justify-center h-[300px] md:h-[400px]">
-                  <img 
-                    src="https://amigosdelaplacita.s3.us-east-2.amazonaws.com/10-8InService.png"
-                    alt="10-8 InService"
+                  <img
+                    src={getS3Url('10-8InService.png')}
+                    alt={currentLang === 'en' ? '10-8 InService logo - Preventing suicide and bullying awareness' : 'Logo de 10-8 InService - Prevención del suicidio y concientización sobre el acoso'}
+                    loading="lazy"
                     className="max-h-full max-w-full object-contain"
                   />
                 </div>
@@ -322,13 +260,14 @@ function App() {
           <h2 className="text-3xl font-bold text-center mb-12 tracking-tight">{t.gallery.title}</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-6xl mx-auto">
             {memories.map((memory, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="aspect-square overflow-hidden relative"
               >
-                <img 
-                  src={memory.image} 
-                  alt={memory.title}
+                <img
+                  src={memory.image}
+                  alt={currentLang === 'en' ? memory.titleEn : memory.titleEs}
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>
@@ -346,9 +285,10 @@ function App() {
               <div key={member.name} className="text-center">
                 <div className="mb-6 relative mx-auto">
                   <div className="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg">
-                    <img 
-                      src={member.image} 
-                      alt={member.name}
+                    <img
+                      src={member.image}
+                      alt={`${member.name}, ${member.role} ${currentLang === 'en' ? 'of Amigos de la Placita' : 'de Amigos de la Placita'}`}
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -459,6 +399,8 @@ function App() {
           </div>
         </div>
       </section>
+
+      </main>
 
       {/* Footer */}
       <footer className="bg-green-800 text-white py-8">

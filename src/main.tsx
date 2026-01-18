@@ -8,19 +8,27 @@ import Sponsorship from './pages/Sponsorship.tsx';
 import Donations from './pages/Donations.tsx';
 import PlayerRegistration from './pages/PlayerRegistration.tsx';
 import SponsorshipRegistration from './pages/SponsorshipRegistration.tsx';
+import NotFound from './pages/NotFound.tsx';
+import { getStoredLanguage } from './hooks/useLanguage.ts';
 import './index.css';
+
+// Component that redirects to the stored/detected language
+function LanguageRedirect() {
+  const lang = getStoredLanguage();
+  return <Navigate to={`/${lang}`} replace />;
+}
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/en" replace />,
+    element: <LanguageRedirect />,
   },
   {
-    path: "/en/*",
+    path: "/en",
     element: <App />,
   },
   {
-    path: "/es/*",
+    path: "/es",
     element: <App />,
   },
   {
@@ -62,6 +70,19 @@ const router = createBrowserRouter([
   {
     path: "/es/register/sponsorship",
     element: <SponsorshipRegistration />,
+  },
+  // 404 catch-all routes
+  {
+    path: "/en/*",
+    element: <NotFound />,
+  },
+  {
+    path: "/es/*",
+    element: <NotFound />,
+  },
+  {
+    path: "*",
+    element: <Navigate to="/en" replace />,
   },
 ]);
 

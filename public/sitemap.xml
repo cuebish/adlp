@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Home pages -->
   <url>
     <loc>https://amigosdelaplacita.org/en</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://amigosdelaplacita.org/es"/>
@@ -15,6 +16,8 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Registration pages -->
   <url>
     <loc>https://amigosdelaplacita.org/en/register</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://amigosdelaplacita.org/es/register"/>
@@ -28,5 +31,69 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://amigosdelaplacita.org/es/register"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Player Registration pages -->
+  <url>
+    <loc>https://amigosdelaplacita.org/en/register/player</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amigosdelaplacita.org/es/register/player"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amigosdelaplacita.org/en/register/player"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amigosdelaplacita.org/es/register/player</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amigosdelaplacita.org/en/register/player"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amigosdelaplacita.org/es/register/player"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sponsorship Registration pages -->
+  <url>
+    <loc>https://amigosdelaplacita.org/en/register/sponsorship</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amigosdelaplacita.org/es/register/sponsorship"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amigosdelaplacita.org/en/register/sponsorship"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://amigosdelaplacita.org/es/register/sponsorship</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amigosdelaplacita.org/en/register/sponsorship"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amigosdelaplacita.org/es/register/sponsorship"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sponsorship info pages -->
+  <url>
+    <loc>https://amigosdelaplacita.org/en/sponsorship</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amigosdelaplacita.org/es/sponsorship"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amigosdelaplacita.org/en/sponsorship"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://amigosdelaplacita.org/es/sponsorship</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amigosdelaplacita.org/en/sponsorship"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amigosdelaplacita.org/es/sponsorship"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Donations pages -->
+  <url>
+    <loc>https://amigosdelaplacita.org/en/donations</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amigosdelaplacita.org/es/donations"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amigosdelaplacita.org/en/donations"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://amigosdelaplacita.org/es/donations</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amigosdelaplacita.org/en/donations"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amigosdelaplacita.org/es/donations"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
