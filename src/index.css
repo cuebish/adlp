@@ -10,8 +10,25 @@
     scroll-behavior: smooth;
   }
 
-  /* Offset anchor links for fixed navbar (h-16 = 64px + 5px green bar) */
+  /* Offset anchor links for fixed navbar (h-18 = 72px + 6px accent bar) */
   section[id] {
-    scroll-margin-top: 5rem;
+    scroll-margin-top: 5.5rem;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-adlp-primary text-white px-7 py-3.5 rounded-xl
+           hover:bg-adlp-primary-dark transition-all duration-200
+           font-medium shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-adlp-primary text-adlp-primary px-7 py-3.5
+           rounded-xl hover:bg-adlp-50 transition-all duration-200 font-medium;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28;
   }
 }
